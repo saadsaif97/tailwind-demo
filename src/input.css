@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .link {
+    @apply text-text-link border-2 border-transparent hover:border-border hover:text-text-active rounded-2xl px-3 py-2 text-sm font-medium;
+    
+    &.active {
+      @apply border-border text-text-active;
+    }
+  }
+}

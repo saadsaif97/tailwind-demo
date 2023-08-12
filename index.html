@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maurice Header Demo</title>
+    <link rel="stylesheet" href="dist/output.css" />
+    <script src="//unpkg.com/alpinejs" defer></script>
+  </head>
+  
+  <body>
+    <header>
+      <nav class="bg-background">
+        <div class="mx-auto max-w-7xl">
+          <div class="relative flex h-16 items-center justify-between">
+            <div
+              class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+            >
+              <a href="#" class="flex flex-shrink-0 items-center text-text-faded text-xl font-bold tracking-[0.002px]">
+                GoldenCarers
+              </a>
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <a href="#" class="link active">Dashboard</a>
+                  <a href="#" class="link" >Team</a>
+                  <a href="#" class="link" >Projects</a>
+                  <a href="#" class="link" >Calendar</a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- search bar -->
+            <div class="flex flex-1 px-2 ml-auto justify-end">
+              <div class="w-full max-w-[266px]">
+                <label for="search" class="sr-only">Search</label>
+                <div class="relative">
+                  <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                    <svg class="h-5 w-5 text-text-faded" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <input id="search" name="search" class="block w-full rounded-full border-0 bg-background-lighter py-1.5 pl-10 pr-3 text-text-lighter placeholder:text-text-lighter focus:bg-white focus:text-gray-900 focus:ring-0 sm:text-sm sm:leading-6" placeholder="Search Anything" type="search">
+                </div>
+              </div>
+            </div>
+            
+            <div class="relative flex items-center" >
+              
+              <!-- create -->
+              <div class="relative" x-data="{ open: false }">
+                <div>
+                  <button
+                    type="button"
+                    class="relative inline-flex items-center gap-x-1.5 rounded-full bg-background-darker px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-background-darker/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    id="user-menu-button"
+                    @click="open = !open"
+                    @click.away="open = false"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    Create
+                    <svg class="-ml-0.5 h-5 w-5 text-text-faded" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z" />
+                    </svg>
+                  </button>
+                </div>
+
+                <div
+                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  x-show="open"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu-button"
+                  tabindex="-1"
+                >
+                  <!-- Active: "bg-gray-100", Not Active: "" -->
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                    >Your Profile</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-1"
+                    >Settings</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-2"
+                    >Sign out</a
+                  >
+                </div>
+              </div>
+              
+              <!-- profile -->
+              <div class="relative ml-3" x-data="{ open: false }">
+                <div>
+                  <button
+                    type="button"
+                    class="relative inline-flex items-center gap-x-1.5 rounded-full bg-background-lighter px-3 py-2 text-sm font-semibold text-text-darker shadow-sm hover:bg-background-darker/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    id="user-menu-button"
+                    @click="open = !open"
+                    @click.away="open = false"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    M
+                  </button>
+                </div>
+
+                <div
+                  class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none"
+                  role="menu"
+                  x-show="open"
+                  aria-orientation="vertical"
+                  aria-labelledby="user-menu-button"
+                  tabindex="-1"
+                >
+                  <!-- Active: "bg-gray-100", Not Active: "" -->
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-0"
+                    >Your Profile</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-1"
+                    >Settings</a
+                  >
+                  <a
+                    href="#"
+                    class="block px-4 py-2 text-sm text-gray-700"
+                    role="menuitem"
+                    tabindex="-1"
+                    id="user-menu-item-2"
+                    >Sign out</a
+                  >
+                </div>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  </body>
+</html>
